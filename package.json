@@ -18,7 +18,13 @@
     "build:unpack": "npm run build && electron-builder --dir",
     "build:win": "npm run build && electron-builder --win",
     "build:mac": "npm run build && electron-builder --mac",
-    "build:linux": "npm run build && electron-builder --linux"
+    "build:linux": "npm run build && electron-builder --linux",
+    "git:commit": "git add -A && git commit -m \"feat: Introduce new features\"",
+    "git:push": "pnpm git:commit && git push origin main",
+    "git:push:force": "git push -f origin main --set-upstream",
+    "git:remote": "git remote add origin git@github.com:hangtiancheng/fe-250228.git",
+    "git:init": "rm -rf ./.git && git init",
+    "git:reset": "pnpm git:init && pnpm git:remote && pnpm git:commit && pnpm git:push:force"
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.2",
